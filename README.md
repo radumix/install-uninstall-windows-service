@@ -65,3 +65,27 @@ Service Notif Service was successfully removed from the system.
 The uninstall has completed.
 
 
+
+Force Stop Service:
+
+Type this command - C:\>sc queryex "Notif Service" 
+
+result shoul be:
+SERVICE_NAME: Notif Service
+        TYPE               : 10  WIN32_OWN_PROCESS
+        STATE              : 4  RUNNING
+                                (STOPPABLE, NOT_PAUSABLE, ACCEPTS_SHUTDOWN)
+        WIN32_EXIT_CODE    : 0  (0x0)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x0
+        PID                : 16600
+        FLAGS              :
+
+Type this command again - C:\>taskkill /pid 16600 /f
+
+Result should be:
+SUCCESS: The process with PID 16600 has been terminated.
+
+C:\>
+
